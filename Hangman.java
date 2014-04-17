@@ -30,11 +30,11 @@ public class Hangman extends ConsoleProgram {
     	while (true) {
     		println("The word now looks like this" + dash);
     		println("You have " + count + " guesses left.");
-    		guessChar = readLine("Your guess: ");
+    		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
-    		while (isNotLetter()) {
+    		while (isNotLetter(str)) {
     			println("The guess is illegal, try a new guess!");
-    			guessChar = readLine("Your guess: ");
+    			str = readLine("Your guess: ");
     		}
     		// If the letter in the word
     		if(isInWord()) {
@@ -46,9 +46,12 @@ public class Hangman extends ConsoleProgram {
     	}
     	
     	/* If the user guess is a single letter */
-    	private boolean isNotLetter() {
-    		if (Character.isLetter(guessChar)) {
+    	private boolean isNotLetter(String str) {
+    		if (str.length() == 1) {
+    			ch = str.charAt(0);
+    			if (Character.isLetter(ch)) {
     			return true;
+    			}
     		}
     		return false;
     	}
@@ -60,5 +63,6 @@ public class Hangman extends ConsoleProgram {
     private RandomGenerator rgen = RandomGenerator.getInstance();
     String dash;
     int count = 8;
-    String guessChar;
+    String str;
+    char ch;
 }
