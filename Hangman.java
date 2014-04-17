@@ -21,10 +21,23 @@ public class Hangman extends ConsoleProgram {
     	HangmanLexicon rl = new HangmanLexicon();
     	int no = rgen.nextInt(0, rl.getWordCount()-1);
     	String word = rl.getWord(no);
-    	println(word);
+    	
+    	/* Play the game */
+    	String dash = "";
+    	for (int i = 0; i < word.length(); i++) {
+    		dash += "-";
+    	}
+    	while (true) {
+    		println("The word now looks like this" + dash);
+    		println("You have " + count + " guesses left.");
+    		guessChar = readLine();
+    		
+    	}
 	}
 
     
     /* Instant variables */
     private RandomGenerator rgen = RandomGenerator.getInstance();
+    int count;
+    String guessChar;
 }
