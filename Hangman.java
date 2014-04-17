@@ -28,7 +28,7 @@ public class Hangman extends ConsoleProgram {
     		dash += "-";
     	}
     	while (true) {
-    		println("The word now looks like this" + dash);
+    		println("The word now looks like this " + dash);
     		println("You have " + count + " guesses left.");
     		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
