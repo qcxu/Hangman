@@ -38,7 +38,7 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		GLabel wordLabel = new GLabel(word, 0.25*getWidth(), 0.75*getHeight());
+		GLabel wordLabel = new GLabel(word, 0.25*getWidth()-BEAM_LENGTH, 0.85*getHeight());
 		wordLabel.setFont("Purisa-30");
 		add(wordLabel);
 	}
