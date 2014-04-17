@@ -13,7 +13,16 @@ import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
 
+	/* Initialize the Hangman Canvas */
+	public void init(){
+		canvas = new HangmanCanvas();
+		add(canvas);
+	}
+	
     public void run() {
+    	
+    	canvas.reset(); // Reset canvas by delete all from canvas
+    	
 		/* You fill this in */
     	println("Welcome to Hangman!");
     	
@@ -104,11 +113,9 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
-	/* Initialize the Hangman Canvas */
-	public void init(){
-		canvas = new HangmanCanvas();
-		add(canvas);
-	}
+
+	
+
 
     
     /* Instant variables */
