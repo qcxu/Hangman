@@ -30,7 +30,7 @@ public class Hangman extends ConsoleProgram {
     	HangmanLexicon rl = new HangmanLexicon();
     	rgen.setSeed(0);
     	int no = rgen.nextInt(0, rl.getWordCount()-1);
-    	String word = rl.getWord(no);
+    	word = rl.getWord(no);
     	
     	/* Start to play the game */
     	dash = "";
@@ -57,7 +57,7 @@ public class Hangman extends ConsoleProgram {
     		
     		
     		// Check to see whether win or lose
-    		if (CorrectCount == word.length()) {
+    		if (guessAllCorrect()) {
     			println("You guessed the word: " + word);
     			println("You win.");
     			break;
@@ -124,10 +124,20 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
+	private boolean guessAllCorrect() {
+		for (int i = 0; i < word.length(); i++) {
+			char ch = dash.charAt(i);
+			if (ch != word.charAt(i)) {
+				return false;
+			}
+		}
+		return true;
+	}
     
     /* Instant variables */
     private RandomGenerator rgen = RandomGenerator.getInstance();
     String dash;
+    String word;
     int count = 8;
     String str;
     char ch;
