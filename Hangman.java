@@ -42,10 +42,14 @@ public class Hangman extends ConsoleProgram {
     		} else {
     			count -=1;
     			println("There are no " + guessChar + "'s in the word.");
-    		}
-    		
+    		}	
+    	}
+    	
+    	/* If the user guess is a single letter */
+    	private boolean isNotChar(guessChar) {
     		
     	}
+    	
 	}
 
     
