@@ -21,7 +21,7 @@ public class Hangman extends ConsoleProgram {
 	
     public void run() {
     	
-    	canvas.reset(); // Reset canvas by delete all from canvas
+    	canvas.reset(); // Display scaffold on canvas
     	
 		/* You fill this in */
     	println("Welcome to Hangman!");
@@ -37,6 +37,7 @@ public class Hangman extends ConsoleProgram {
     	for (int i = 0; i < word.length(); i++) {
     		dash += "-";
     	}
+     	canvas.displayWord(dash);
     	while (true) {
     		println("The word now looks like this " + dash);
     		println("You have " + count + " guesses left.");
