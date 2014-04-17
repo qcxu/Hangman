@@ -53,7 +53,14 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		incoLetters
+		if (getElementAt(0.1*getWidth(), 0.95*getHeight()) == null) {
+			double x = 0.1*getWidth();
+		} else {
+			double x = incoLabel.getX()+incoLabel.getWidth();
+		}
+		incoLabel = new GLabel("letter", x, 0.95*getHeight());
+		incoLabel.setFont("Purisa-20");
+		add(incoLabel);
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
@@ -70,5 +77,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int FOOT_LENGTH = 28;
 	String inco_update = "";
 	private GLabel wordLabel;
+	private GLabel incoLabel;
 
 }
