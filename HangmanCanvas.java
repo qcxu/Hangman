@@ -59,7 +59,7 @@ public class HangmanCanvas extends GCanvas {
 		} else {
 			x = incoLabel.getX()+incoLabel.getWidth();
 		}
-		incoLabel = new GLabel("letter", x, 0.95*getHeight());
+		incoLabel = new GLabel(letter, x, 0.95*getHeight());
 		incoLabel.setFont("Purisa-20");
 		add(incoLabel);
 	}
