@@ -32,7 +32,7 @@ public class Hangman extends ConsoleProgram {
     		println("You have " + count + " guesses left.");
     		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
-    		while (isNotLetter(str)) {
+    		while (!isLetter(str)) {
     			println("The guess is illegal, try a new guess!");
     			str = readLine("Your guess: ");
     		}
@@ -46,11 +46,13 @@ public class Hangman extends ConsoleProgram {
     	}
     	
     	/* If the user guess is a single letter */
-    	private boolean isNotLetter(String str) {
+    	private boolean isLetter(String str) {
     		if (str.length() == 1) {
     			ch = str.charAt(0);
     			if (Character.isLetter(ch)) {
-    			return true;
+    				return true;
+    			} else {
+    				return false;
     			}
     		}
     		return false;
