@@ -39,7 +39,7 @@ public class HangmanCanvas extends GCanvas {
  */
 	public void displayWord(String word) {
 		GLabel wordLabel = new GLabel(word, 0.25*getWidth(), 0.75*getHeight());
-		
+		wordLabel.setFont("Purisa-36");
 		add(wordLabel);
 	}
 
