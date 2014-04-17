@@ -16,6 +16,13 @@ public class HangmanCanvas extends GCanvas {
 		double slow_y = shigh_y + SCAFFOLD_HEIGHT;
 		GLine scaffold = new GLine(s_x, shigh_y, s_x, slow_y);
 		add(scaffold);
+		
+		// Create beamer
+		double bleft_x = 0.5 * getWidth() - BEAM_LENGTH;
+		double b_y = 0.25 * getHeight();
+		double bright_x = 0.5 * getWidth();
+		GLine beamer = new GLine(bleft_x, b_y, bright_x, b_y);
+		add(beamer);
 	}
 
 /**
