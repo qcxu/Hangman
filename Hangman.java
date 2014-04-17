@@ -38,7 +38,7 @@ public class Hangman extends ConsoleProgram {
     		}
     		// If the letter in the word
     		if(isInWord(ch)) {
-    			dash = dashWithLetter(guessChar);
+    			dash = dashWithLetter(ch);
     		} else {
     			count -=1;
     			println("There are no " + guessChar + "'s in the word.");
