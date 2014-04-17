@@ -58,15 +58,19 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
-	private boolean isInWord(char ch, String word, String dash) {
+	private String dashWithLetters(char ch, String word, String dash) {
+		String result = "";
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
 		}
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
-				char dash.charAt(i) = ch;
-			} 
+				result += ch;
+			} else {
+				result += "-";
+			}
 		}
+		return result;
 	}
 
     
