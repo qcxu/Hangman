@@ -124,10 +124,6 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
-
-	
-
-
     
     /* Instant variables */
     private RandomGenerator rgen = RandomGenerator.getInstance();
