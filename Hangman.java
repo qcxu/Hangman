@@ -28,7 +28,7 @@ public class Hangman extends ConsoleProgram {
     		dash += "-";
     	}
     	while (true) {
-    		println("The word now looks like this " + dash);
+    		
     		
     		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
@@ -83,6 +83,8 @@ public class Hangman extends ConsoleProgram {
 		if (flag == 0) {
 			count -=1;
 			println("There are no " + ch + "'s in the word.");
+			println("The word now looks like this " + dash);
+			println("You have " + count + " guesses left.");
 		}  else {
 			println("That guess is correct.");
 		}
