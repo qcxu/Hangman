@@ -103,6 +103,12 @@ public class Hangman extends ConsoleProgram {
 		}
 		return result;
 	}
+	
+	/* Initialize the Hangman Canvas */
+	public void init(){
+		canvas = new HangmanCanvas();
+		add(canvas);
+	}
 
     
     /* Instant variables */
@@ -112,4 +118,5 @@ public class Hangman extends ConsoleProgram {
     String str;
     char ch;
     int CorrectCount = 0;
+    private HangmanCanvas canvas;
 }
