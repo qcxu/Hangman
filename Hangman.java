@@ -82,21 +82,21 @@ public class Hangman extends ConsoleProgram {
 	 */
 	private String dashWithLetters(char ch, String word, String dash) {
 		String result = "";
-		int flag = 0;
+		int flag = 0; // Check whether the letter is in the word
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
 		}
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
 				result += ch;
-				CorrectCount += 1;
+				CorrectCount += 1; // Calculate the correct letters guessed in the word
 				flag = 1;
 			} else {
 				result += dash.charAt(i);
 			}
 		}
 		if (flag == 0) {
-			count -=1;
+			count -=1; // Calculate the incorrect guess
 			println("There are no " + ch + "'s in the word.");
 		}  else {
 			println("That guess is correct.");
