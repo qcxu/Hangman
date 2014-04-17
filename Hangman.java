@@ -135,5 +135,5 @@ public class Hangman extends ConsoleProgram {
     char ch;
     int CorrectCount = 0;
     private HangmanCanvas canvas;
-    String incoLetters = "";
+    public String incoLetters = "";
 }
