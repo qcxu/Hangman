@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class Hangman extends ConsoleProgram {
 
-	/* Initialize the Hangman Canvas */
+	/* Create SCAFFOLD on Hangman Canvas */
 	public void init(){
 		canvas = new HangmanCanvas();
 		add(canvas);
