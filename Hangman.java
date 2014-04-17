@@ -117,8 +117,9 @@ public class Hangman extends ConsoleProgram {
 		if (flag == 0) {
 			count -=1; // Calculate the incorrect guess
 			println("There are no " + ch + "'s in the word.");
-			incoLetters += ch;
+			
 			canvas.noteIncorrectGuess(ch); // Update incorrect letters on canvas
+			incoLetters += ch;
 		}  else {
 			println("That guess is correct.");
 		}
