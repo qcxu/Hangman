@@ -61,7 +61,8 @@ public class Hangman extends ConsoleProgram {
     /* Check whether the user guess is a single letter, which means it 
      * meets the following conditions:
      * (1) length is 1;
-     * (2) it is a letter;
+     * (2) convert it to a char;
+     * (3) it is a letter;
      */
 	private boolean isLetter(String str) {
 		if (str.length() == 1) {
@@ -75,7 +76,9 @@ public class Hangman extends ConsoleProgram {
 	
 	/* Check whether the guess letter is in the word which means it meets
 	 * the following conditions:
-	 * 
+	 * (1) convert it to upper case;
+	 * (2) if it's in the word, replace that position with the letter;
+	 * (3) if it's not in the word, no change.
 	 */
 	private String dashWithLetters(char ch, String word, String dash) {
 		String result = "";
