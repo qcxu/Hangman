@@ -53,10 +53,11 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
+		double x;
 		if (getElementAt(0.1*getWidth(), 0.95*getHeight()) == null) {
-			double x = 0.1*getWidth();
+			x = 0.1*getWidth();
 		} else {
-			double x = incoLabel.getX()+incoLabel.getWidth();
+			x = incoLabel.getX()+incoLabel.getWidth();
 		}
 		incoLabel = new GLabel("letter", x, 0.95*getHeight());
 		incoLabel.setFont("Purisa-20");
