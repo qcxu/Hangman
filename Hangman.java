@@ -45,24 +45,28 @@ public class Hangman extends ConsoleProgram {
     		}	
     	}
     	
-    	/* If the user guess is a single letter */
-    	private boolean isLetter(String str) {
-    		if (str.length() == 1) {
-    			ch = str.charAt(0);
-    			if (Character.isLetter(ch)) {
-    				return true;
-    			}
-    		}
-    		return false;
-    	}
-    	
-    	private boolean isInWord(char ch) {
-    		
-    	}
-    	
-    	
-    	
-    	
+	}
+    
+    /* If the user guess is a single letter */
+	private boolean isLetter(String str) {
+		if (str.length() == 1) {
+			ch = str.charAt(0);
+			if (Character.isLetter(ch)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean isInWord(char ch, String word, String dash) {
+		if (Character.isLowerCase(ch)) {
+			ch = Character.toUpperCase(ch);
+		}
+		for (int i = 0; i < word.length(); i++) {
+			if (ch == word.charAt(i)) {
+				char dash.charAt(i) = ch;
+			} 
+		}
 	}
 
     
