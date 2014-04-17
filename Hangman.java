@@ -51,8 +51,6 @@ public class Hangman extends ConsoleProgram {
     			ch = str.charAt(0);
     			if (Character.isLetter(ch)) {
     				return true;
-    			} else {
-    				return false;
     			}
     		}
     		return false;
