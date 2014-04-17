@@ -103,7 +103,6 @@ public class Hangman extends ConsoleProgram {
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
 				result += ch;
-				CorrectCount += 1; // Calculate the correct letters guessed in the word
 				flag = 1;
 			} else {
 				result += dash.charAt(i);
@@ -119,7 +118,6 @@ public class Hangman extends ConsoleProgram {
 			println("There are no " + ch + "'s in the word.");
 			
 			canvas.noteIncorrectGuess(ch); // Update incorrect letters on canvas
-			incoLetters += ch;
 		}  else {
 			println("That guess is correct.");
 		}
@@ -135,5 +133,4 @@ public class Hangman extends ConsoleProgram {
     char ch;
     int CorrectCount = 0;
     private HangmanCanvas canvas;
-    public String incoLetters = "";
 }
