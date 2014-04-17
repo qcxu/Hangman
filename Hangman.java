@@ -50,6 +50,8 @@ public class Hangman extends ConsoleProgram {
     		
     		// Check to see whether the letter is in the word
     		dash = dashWithLetters(ch, word, dash);
+    		
+    		// Display word on canvas
     		canvas.displayWord(dash);
     		
     		// Check to see whether win or lose
