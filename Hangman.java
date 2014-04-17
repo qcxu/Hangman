@@ -37,7 +37,7 @@ public class Hangman extends ConsoleProgram {
     			str = readLine("Your guess: ");
     		}
     		// If the letter in the word
-    		if(isInWord()) {
+    		if(isInWord(ch)) {
     			dash = dashWithLetter(guessChar);
     		} else {
     			count -=1;
@@ -55,6 +55,11 @@ public class Hangman extends ConsoleProgram {
     		}
     		return false;
     	}
+    	
+    	private boolean isInWord(char ch) {
+    		
+    	}
+    	
     	
 	}
 
