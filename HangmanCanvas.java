@@ -38,6 +38,7 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
+		
 		GLabel wordLabel = new GLabel(word, 0.1*getWidth(), 0.9*getHeight());
 		wordLabel.setFont("Purisa-26");
 		add(wordLabel);
@@ -66,5 +67,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
 	String inco_update = "";
+	private GLabel wordLabel;
 
 }
