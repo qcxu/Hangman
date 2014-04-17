@@ -37,15 +37,21 @@ public class Hangman extends ConsoleProgram {
     			str = readLine("Your guess: ");
     		}
     		// If the letter in the word
-    		if(isInWord(ch)) {
-    			dash = dashWithLetter(ch);
-    		} else {
-    			count -=1;
-    			println("There are no " + ch + "'s in the word.");
-    		}	
+    		dashWithLetters(ch, word, dash);
+    		if (flag == word.length()) {
+    			println("You guessed the word: " + word);
+    			println("You win.");
+    			break;
+    		}
+    		if (count == 0) {
+    			println("You are completely hung.");
+    			println("The word was: " + word);
+    			println("You lose.");
+    			break;
+    		}
     	}
-    	
-	}
+    		
+    }
     
     /* If the user guess is a single letter */
 	private boolean isLetter(String str) {
@@ -58,7 +64,7 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
-	private String dashWithLetters(char ch, String word, String dash) {
+	private void dashWithLetters(char ch, String word, String dash) {
 		String result = "";
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
@@ -66,11 +72,17 @@ public class Hangman extends ConsoleProgram {
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
 				result += ch;
+				flag += 1;
 			} else {
 				result += "-";
 			}
 		}
-		return result;
+		if (flag == 0) {
+			count -=1;
+			println("There are no " + ch + "'s in the word.");
+		}  else {
+			println("That guess is correct.");
+		}
 	}
 
     
@@ -80,4 +92,5 @@ public class Hangman extends ConsoleProgram {
     int count = 8;
     String str;
     char ch;
+    int flag = 0;
 }
