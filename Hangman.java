@@ -65,7 +65,7 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
-	private void dashWithLetters(char ch, String word, String dash) {
+	private String dashWithLetters(char ch, String word, String dash) {
 		String result = "";
 		int flag = 0;
 		if (Character.isLowerCase(ch)) {
@@ -80,13 +80,13 @@ public class Hangman extends ConsoleProgram {
 				result += dash.charAt(i);
 			}
 		}
-		dash = result;
 		if (flag == 0) {
 			count -=1;
 			println("There are no " + ch + "'s in the word.");
 		}  else {
 			println("That guess is correct.");
 		}
+		return result;
 	}
 
     
