@@ -37,7 +37,7 @@ public class Hangman extends ConsoleProgram {
     			str = readLine("Your guess: ");
     		}
     		// If the letter in the word
-    		dashWithLetters(ch, word, dash);
+    		dashWithLetters(ch, word);
     		if (flag == word.length()) {
     			println("You guessed the word: " + word);
     			println("You win.");
@@ -64,17 +64,17 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
-	private void dashWithLetters(char ch, String word, String dash) {
-		String result = "";
+	private void dashWithLetters(char ch, String word) {
+		dash = "";
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
 		}
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
-				result += ch;
+				dash += ch;
 				flag += 1;
 			} else {
-				result += "-";
+				dash += "-";
 			}
 		}
 		if (flag == 0) {
