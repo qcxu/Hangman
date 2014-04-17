@@ -18,8 +18,8 @@ public class Hangman extends ConsoleProgram {
     	println("Welcome to Hangman!");
     	
     	/* Randomly choose a word from Hangman Lexicon */
-    	
-    	int index = rgen.nextInt(0, HangmanLexicon.getWordCount());
+    	HangmanLexicon rl = new HangmanLexicon();
+    	int index = rgen.nextInt(0, rl.getWordCount());
     	
 	}
 
