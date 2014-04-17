@@ -23,7 +23,7 @@ public class Hangman extends ConsoleProgram {
     	int no = rgen.nextInt(0, rl.getWordCount()-1);
     	String word = rl.getWord(no);
     	
-    	/* Play the game */
+    	/* Start to play the game */
     	dash = "";
     	for (int i = 0; i < word.length(); i++) {
     		dash += "-";
@@ -32,13 +32,17 @@ public class Hangman extends ConsoleProgram {
     		println("The word now looks like this " + dash);
     		println("You have " + count + " guesses left.");
     		str = readLine("Your guess: ");
-    		// If the user guesses something other than a single letter
+    		
+    		// Check to see whether the user guesses something other than a single letter
     		while (!isLetter(str)) {
     			println("The guess is illegal, try a new guess!");
     			str = readLine("Your guess: ");
     		}
-    		// If the letter in the word
+    		
+    		// Check to see whether the letter is in the word
     		dash = dashWithLetters(ch, word, dash);
+    		
+    		// Check to see whether win or lose
     		if (CorrectCount == word.length()) {
     			println("You guessed the word: " + word);
     			println("You win.");
@@ -54,7 +58,11 @@ public class Hangman extends ConsoleProgram {
     		
     }
     
-    /* If the user guess is a single letter */
+    /* Check whether the user guess is a single letter, which means it 
+     * meets the following conditions:
+     * (1) length is 1;
+     * (2) it is a letter;
+     */
 	private boolean isLetter(String str) {
 		if (str.length() == 1) {
 			ch = str.charAt(0);
@@ -65,6 +73,10 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
+	/* Check whether the guess letter is in the word which means it meets
+	 * the following conditions:
+	 * 
+	 */
 	private String dashWithLetters(char ch, String word, String dash) {
 		String result = "";
 		int flag = 0;
