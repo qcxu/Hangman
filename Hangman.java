@@ -122,6 +122,11 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
+	private void addBodyParts(int count) {
+		
+	}
+	
+	
 	/* Check whether all the letters are guessed correctly */
 	private boolean guessAllCorrect() {
 		for (int i = 0; i < word.length(); i++) {
