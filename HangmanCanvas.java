@@ -23,6 +23,13 @@ public class HangmanCanvas extends GCanvas {
 		double bright_x = 0.5 * getWidth();
 		GLine beamer = new GLine(bleft_x, b_y, bright_x, b_y);
 		add(beamer);
+		
+		// Creat rope
+		double r_x = 0.5 * getWidth();
+		double rhigh_y = 0.25 * getHeight();
+		double rlow_y = shigh_y + ROPE_LENGTH;
+		GLine rope = new GLine(r_x, rhigh_y, r_x, rlow_y);
+		add(rope);
 	}
 
 /**
