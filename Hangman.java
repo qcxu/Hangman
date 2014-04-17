@@ -29,7 +29,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	while (true) {
     		println("The word now looks like this " + dash);
-    		println("You have " + count + " guesses left.");
+    		
     		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
     		while (!isLetter(str)) {
@@ -66,13 +66,15 @@ public class Hangman extends ConsoleProgram {
 	
 	private void dashWithLetters(char ch, String word) {
 		String result = "";
+		int flag = 0;
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
 		}
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
 				result += ch;
-				flag += 1;
+				correctCount += 1;
+				flag = 1;
 			} else {
 				result += "-";
 			}
@@ -93,5 +95,5 @@ public class Hangman extends ConsoleProgram {
     int count = 8;
     String str;
     char ch;
-    int flag = 0;
+    int correctCount = 0;
 }
