@@ -19,8 +19,9 @@ public class Hangman extends ConsoleProgram {
     	
     	/* Randomly choose a word from Hangman Lexicon */
     	HangmanLexicon rl = new HangmanLexicon();
-    	int index = rgen.nextInt(0, rl.getWordCount());
-    	
+    	int no = rgen.nextInt(0, rl.getWordCount());
+    	String word = rl.getWord(no);
+    	println(word);
 	}
 
     
