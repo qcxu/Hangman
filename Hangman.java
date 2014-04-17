@@ -131,6 +131,5 @@ public class Hangman extends ConsoleProgram {
     int count = 8;
     String str;
     char ch;
-    int CorrectCount = 0;
     private HangmanCanvas canvas;
 }
