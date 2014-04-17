@@ -28,8 +28,8 @@ public class Hangman extends ConsoleProgram {
     		dash += "-";
     	}
     	while (true) {
-    		
-    		
+    		println("The word now looks like this " + dash);
+    		println("You have " + count + " guesses left.");
     		str = readLine("Your guess: ");
     		// If the user guesses something other than a single letter
     		while (!isLetter(str)) {
@@ -38,7 +38,7 @@ public class Hangman extends ConsoleProgram {
     		}
     		// If the letter in the word
     		dashWithLetters(ch, word);
-    		if (correctCount == word.length()) {
+    		if (CorrectCount == word.length()) {
     			println("You guessed the word: " + word);
     			println("You win.");
     			break;
@@ -73,18 +73,15 @@ public class Hangman extends ConsoleProgram {
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
 				result += ch;
-				correctCount += 1;
+				CorrectCount += 1;
 				flag = 1;
 			} else {
 				result += "-";
 			}
 		}
-		dash = result;
 		if (flag == 0) {
 			count -=1;
 			println("There are no " + ch + "'s in the word.");
-			println("The word now looks like this " + dash);
-			println("You have " + count + " guesses left.");
 		}  else {
 			println("That guess is correct.");
 		}
@@ -97,5 +94,5 @@ public class Hangman extends ConsoleProgram {
     int count = 8;
     String str;
     char ch;
-    int correctCount = 0;
+    int CorrectCount = 0;
 }
