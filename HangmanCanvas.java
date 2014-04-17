@@ -38,6 +38,8 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
+		if ()
+		remove(wordLabel);
 		wordLabel = new GLabel(word, 0.1*getWidth(), 0.9*getHeight());
 		wordLabel.setFont("Purisa-26");
 		add(wordLabel);
