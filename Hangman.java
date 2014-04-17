@@ -23,14 +23,27 @@ public class Hangman extends ConsoleProgram {
     	String word = rl.getWord(no);
     	
     	/* Play the game */
-    	String dash = "";
+    	dash = "";
     	for (int i = 0; i < word.length(); i++) {
     		dash += "-";
     	}
     	while (true) {
     		println("The word now looks like this" + dash);
     		println("You have " + count + " guesses left.");
-    		guessChar = readLine();
+    		guessChar = readLine("Your guess: ");
+    		// If the user guesses something other than a single letter
+    		while (isNotChar(guessChar)) {
+    			println("The guess is illegal, try a new guess!");
+    			guessChar = readLine("Your guess: ");
+    		}
+    		// If the letter in the word
+    		if(isInWord(guessChar)) {
+    			dash = dashWithLetter(guessChar);
+    		} else {
+    			count -=1;
+    			println("There are no " + guessChar + "'s in the word.");
+    		}
+    		
     		
     	}
 	}
@@ -38,6 +51,7 @@ public class Hangman extends ConsoleProgram {
     
     /* Instant variables */
     private RandomGenerator rgen = RandomGenerator.getInstance();
-    int count;
+    String dash;
+    int count = 8;
     String guessChar;
 }
