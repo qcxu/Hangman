@@ -46,7 +46,7 @@ public class Hangman extends ConsoleProgram {
     	}
     	
     	/* If the user guess is a single letter */
-    	private boolean isNotLetter(String str) {
+    	boolean isNotLetter(String str) {
     		if (str.length() == 1) {
     			ch = str.charAt(0);
     			if (Character.isLetter(ch)) {
