@@ -65,7 +65,7 @@ public class Hangman extends ConsoleProgram {
 		return false;
 	}
 	
-	private void dashWithLetters(char ch, String word) {
+	private void dashWithLetters(char ch, String word, String dash) {
 		String result = "";
 		int flag = 0;
 		if (Character.isLowerCase(ch)) {
@@ -77,7 +77,7 @@ public class Hangman extends ConsoleProgram {
 				CorrectCount += 1;
 				flag = 1;
 			} else {
-				result += "-";
+				result += dash.charAt(i);
 			}
 		}
 		dash = result;
