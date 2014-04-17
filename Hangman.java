@@ -37,8 +37,10 @@ public class Hangman extends ConsoleProgram {
     	for (int i = 0; i < word.length(); i++) {
     		dash += "-";
     	}
-     	canvas.displayWord(dash);
-    	while (true) {
+    	
+     	canvas.displayWord(dash); \\ Display all dash
+    	
+     	while (true) {
     		println("The word now looks like this " + dash);
     		println("You have " + count + " guesses left.");
     		str = readLine("Your guess: ");
