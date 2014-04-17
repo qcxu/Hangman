@@ -51,8 +51,7 @@ public class Hangman extends ConsoleProgram {
     		// Check to see whether the letter is in the word
     		dash = dashWithLetters(ch, word, dash);
     		
-    		// Display word on canvas
-    		canvas.displayWord(dash);
+    		
     		
     		// Check to see whether win or lose
     		if (CorrectCount == word.length()) {
@@ -107,9 +106,15 @@ public class Hangman extends ConsoleProgram {
 				result += dash.charAt(i);
 			}
 		}
+		
+		// Display word on canvas
+		canvas.displayWord(result);
+		
+		// Display whether the guess is correct or not
 		if (flag == 0) {
 			count -=1; // Calculate the incorrect guess
 			println("There are no " + ch + "'s in the word.");
+			canvas.noteIncorrectGuess(ch); // Update incorrect letters on canvas
 		}  else {
 			println("That guess is correct.");
 		}
