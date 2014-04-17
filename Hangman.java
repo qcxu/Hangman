@@ -19,6 +19,7 @@ public class Hangman extends ConsoleProgram {
     	
     	/* Randomly choose a word from Hangman Lexicon */
     	HangmanLexicon rl = new HangmanLexicon();
+    	rgen.setSeed(0);
     	int no = rgen.nextInt(0, rl.getWordCount()-1);
     	String word = rl.getWord(no);
     	
@@ -79,6 +80,7 @@ public class Hangman extends ConsoleProgram {
 				result += "-";
 			}
 		}
+		dash = result;
 		if (flag == 0) {
 			count -=1;
 			println("There are no " + ch + "'s in the word.");
