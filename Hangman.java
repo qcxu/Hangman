@@ -65,18 +65,19 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	private void dashWithLetters(char ch, String word) {
-		dash = "";
+		String result = "";
 		if (Character.isLowerCase(ch)) {
 			ch = Character.toUpperCase(ch);
 		}
 		for (int i = 0; i < word.length(); i++) {
 			if (ch == word.charAt(i)) {
-				dash += ch;
+				result += ch;
 				flag += 1;
 			} else {
-				dash += "-";
+				result += "-";
 			}
 		}
+		dash = result;
 		if (flag == 0) {
 			count -=1;
 			println("There are no " + ch + "'s in the word.");
