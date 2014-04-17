@@ -38,7 +38,7 @@ public class Hangman extends ConsoleProgram {
     			str = readLine("Your guess: ");
     		}
     		// If the letter in the word
-    		dashWithLetters(ch, word);
+    		dashWithLetters(ch, word, dash);
     		if (CorrectCount == word.length()) {
     			println("You guessed the word: " + word);
     			println("You win.");
