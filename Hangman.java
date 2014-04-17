@@ -124,6 +124,7 @@ public class Hangman extends ConsoleProgram {
 		return result;
 	}
 	
+	/* Check whether all the letters are guessed correctly */
 	private boolean guessAllCorrect() {
 		for (int i = 0; i < word.length(); i++) {
 			char ch = dash.charAt(i);
