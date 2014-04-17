@@ -38,7 +38,7 @@ public class Hangman extends ConsoleProgram {
     		dash += "-";
     	}
     	
-     	canvas.displayWord(dash); \\ Display all dash
+     	canvas.displayWord(dash); // Display all dash
     	
      	while (true) {
     		println("The word now looks like this " + dash);
