@@ -70,8 +70,8 @@ public class HangmanCanvas extends GCanvas {
 	}
 
 	/* Add body parts to canvas according to count */
-	private void addBodyParts(int count) {
-		switch(count) {
+	private void addBodyParts(int n) {
+		switch(n) {
 		case 0: addRightFoot();
 		case 1: addLeftFoot();
 		case 2: addRightLeg();
@@ -84,7 +84,12 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addHead() {
-		GOval head
+		GOval head = new GOval(0.5*getWidth()-HEAD_RADIUS, 0.05 * getHeight()-ROPE_LENGTH, 2*HEAD_RADIUS, 2*HEAD_RADIUS);
+		add(head);
+	}
+	
+	private void addBody() {
+		
 	}
 	
 /* Constants for the simple version of the picture (in pixels) */
