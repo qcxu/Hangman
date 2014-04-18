@@ -109,7 +109,7 @@ public class HangmanCanvas extends GCanvas {
 		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
 		double right_x = 0.5*getWidth()+UPPER_ARM_LENGTH;
 		GLine upperArm = new GLine(left_x, upper_y, right_x, upper_y);
-		GLine lowerArm = new GLine(left_x, upper_y, left_x, lower_y);
+		GLine lowerArm = new GLine(right_x, upper_y, right_x, lower_y);
 		add(upperArm);
 		add(lowerArm);	
 	}
@@ -131,7 +131,7 @@ public class HangmanCanvas extends GCanvas {
 		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
 		double right_x = 0.5*getWidth()+HIP_WIDTH;
 		GLine upperLeg = new GLine(left_x, upper_y, right_x, upper_y);
-		GLine lowerLeg = new GLine(left_x, upper_y, left_x, lower_y);
+		GLine lowerLeg = new GLine(right_x, upper_y, right_x, lower_y);
 		add(upperLeg);
 		add(lowerLeg);	
 	}
