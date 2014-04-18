@@ -83,19 +83,19 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addHead() {
-		GOval head = new GOval(0.5*getWidth()-HEAD_RADIUS, 0.05*getHeight()-ROPE_LENGTH, 2*HEAD_RADIUS, 2*HEAD_RADIUS);
+		GOval head = new GOval(0.5*getWidth()-HEAD_RADIUS, 0.05*getHeight()+ROPE_LENGTH, 2*HEAD_RADIUS, 2*HEAD_RADIUS);
 		add(head);
 	}
 	
 	private void addBody() {
-		GLine body = new GLine(0.5*getWidth(), 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS, 0.5*getWidth(), 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH);
+		GLine body = new GLine(0.5*getWidth(), 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS, 0.5*getWidth(), 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH);
 		add(body);
 	}
 	
 	private void addLeftArm() {
 		double left_x = 0.5*getWidth()-UPPER_ARM_LENGTH;
-		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
-		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
+		double upper_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
+		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
 		double right_x = 0.5*getWidth();
 		GLine upperArm = new GLine(left_x, upper_y, right_x, upper_y);
 		GLine lowerArm = new GLine(left_x, upper_y, left_x, lower_y);
@@ -105,8 +105,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void addRightArm() {
 		double left_x = 0.5*getWidth();
-		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
-		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
+		double upper_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
+		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
 		double right_x = 0.5*getWidth()+UPPER_ARM_LENGTH;
 		GLine upperArm = new GLine(left_x, upper_y, right_x, upper_y);
 		GLine lowerArm = new GLine(left_x, upper_y, left_x, lower_y);
@@ -116,8 +116,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void addLeftLeg() {
 		double left_x = 0.5*getWidth()-HIP_WIDTH;
-		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
-		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double upper_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
+		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
 		double right_x = 0.5*getWidth();
 		GLine upperLeg = new GLine(left_x, upper_y, right_x, upper_y);
 		GLine lowerLeg = new GLine(left_x, upper_y, left_x, lower_y);
@@ -127,8 +127,8 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void addRightLeg() {
 		double left_x = 0.5*getWidth();
-		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
-		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double upper_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
+		double lower_y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
 		double right_x = 0.5*getWidth()+HIP_WIDTH;
 		GLine upperLeg = new GLine(left_x, upper_y, right_x, upper_y);
 		GLine lowerLeg = new GLine(left_x, upper_y, left_x, lower_y);
@@ -139,7 +139,7 @@ public class HangmanCanvas extends GCanvas {
 	private void addLeftFoot() {
 		double right_x = 0.5*getWidth()-HIP_WIDTH;
 		double left_x = right_x-FOOT_LENGTH;
-		double y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
 		GLine leftFoot = new GLine(left_x, y, right_x, y);
 		add(leftFoot);
 	}
@@ -147,7 +147,7 @@ public class HangmanCanvas extends GCanvas {
 	private void addRightFoot() {
 		double left_x = 0.5*getWidth()+HIP_WIDTH;
 		double right_x = left_x+FOOT_LENGTH;
-		double y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double y = 0.05*getHeight()+ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
 		GLine rightFoot = new GLine(left_x, y, right_x, y);
 		add(rightFoot);
 	}
