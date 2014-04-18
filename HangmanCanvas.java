@@ -84,12 +84,73 @@ public class HangmanCanvas extends GCanvas {
 	}
 	
 	private void addHead() {
-		GOval head = new GOval(0.5*getWidth()-HEAD_RADIUS, 0.05 * getHeight()-ROPE_LENGTH, 2*HEAD_RADIUS, 2*HEAD_RADIUS);
+		GOval head = new GOval(0.5*getWidth()-HEAD_RADIUS, 0.05*getHeight()-ROPE_LENGTH, 2*HEAD_RADIUS, 2*HEAD_RADIUS);
 		add(head);
 	}
 	
 	private void addBody() {
-		
+		GLine body = new GLine(0.5*getWidth(), 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS, 0.5*getWidth(), 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH);
+		add(body);
+	}
+	
+	private void addLeftArm() {
+		double left_x = 0.5*getWidth()-UPPER_ARM_LENGTH;
+		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
+		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
+		double right_x = 0.5*getWidth();
+		GLine upperArm = new GLine(left_x, upper_y, right_x, upper_y);
+		GLine lowerArm = new GLine(left_x, upper_y, left_x, lower_y);
+		add(upperArm);
+		add(lowerArm);	
+	}
+	
+	private void addRightArm() {
+		double left_x = 0.5*getWidth();
+		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD;
+		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+ARM_OFFSET_FROM_HEAD+LOWER_ARM_LENGTH;
+		double right_x = 0.5*getWidth()+UPPER_ARM_LENGTH;
+		GLine upperArm = new GLine(left_x, upper_y, right_x, upper_y);
+		GLine lowerArm = new GLine(left_x, upper_y, left_x, lower_y);
+		add(upperArm);
+		add(lowerArm);	
+	}
+	
+	private void addLeftLeg() {
+		double left_x = 0.5*getWidth()-HIP_WIDTH;
+		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
+		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double right_x = 0.5*getWidth();
+		GLine upperLeg = new GLine(left_x, upper_y, right_x, upper_y);
+		GLine lowerLeg = new GLine(left_x, upper_y, left_x, lower_y);
+		add(upperLeg);
+		add(lowerLeg);	
+	}
+	
+	private void addRightLeg() {
+		double left_x = 0.5*getWidth();
+		double upper_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH;
+		double lower_y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		double right_x = 0.5*getWidth()+HIP_WIDTH;
+		GLine upperLeg = new GLine(left_x, upper_y, right_x, upper_y);
+		GLine lowerLeg = new GLine(left_x, upper_y, left_x, lower_y);
+		add(upperLeg);
+		add(lowerLeg);	
+	}
+	
+	private void addLeftFoot() {
+		double right_x = 0.5*getWidth()-HIP_WIDTH;
+		double left_x = right_x-FOOT_LENGTH;
+		double y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		GLine leftFoot = new GLine(left_x, y, right_x, y);
+		add(leftFoot);
+	}
+	
+	private void addRightFoot() {
+		double left_x = 0.5*getWidth()+HIP_WIDTH;
+		double right_x = right_x+FOOT_LENGTH;
+		double y = 0.05*getHeight()-ROPE_LENGTH+2*HEAD_RADIUS+BODY_LENGTH+LEG_LENGTH;
+		GLine rightFoot = new GLine(left_x, y, right_x, y);
+		add(rightFoot);
 	}
 	
 /* Constants for the simple version of the picture (in pixels) */
@@ -104,7 +165,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
-	String inco_update = "";
 	private GLabel wordLabel;
 	private GLabel incoLabel;
 
