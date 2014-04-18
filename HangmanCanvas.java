@@ -53,7 +53,6 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		int n = 7;
 		double x;
 		if (getElementAt(0.1*getWidth(), 0.95*getHeight()) == null) {
 			x = 0.1*getWidth();
@@ -167,5 +166,6 @@ public class HangmanCanvas extends GCanvas {
 	private static final int FOOT_LENGTH = 28;
 	private GLabel wordLabel;
 	private GLabel incoLabel;
+	int n = 7;
 
 }
