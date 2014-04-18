@@ -53,6 +53,7 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
+		int n = 7;
 		double x;
 		if (getElementAt(0.1*getWidth(), 0.95*getHeight()) == null) {
 			x = 0.1*getWidth();
@@ -63,8 +64,29 @@ public class HangmanCanvas extends GCanvas {
 		incoLabel = new GLabel(letterToStr, x, 0.95*getHeight());
 		incoLabel.setFont("Purisa-14");
 		add(incoLabel);
+		addBodyParts(n);
+		n--;
+		
 	}
 
+	/* Add body parts to canvas according to count */
+	private void addBodyParts(int count) {
+		switch(count) {
+		case 0: addRightFoot();
+		case 1: addLeftFoot();
+		case 2: addRightLeg();
+		case 3: addLeftLeg();
+		case 4: addRightArm();
+		case 5: addLeftArm();
+		case 6: addBody();
+		case 7: addHead();
+		}
+	}
+	
+	private void addHead() {
+		GOval head
+	}
+	
 /* Constants for the simple version of the picture (in pixels) */
 	private static final int SCAFFOLD_HEIGHT = 360;
 	private static final int BEAM_LENGTH = 144;
