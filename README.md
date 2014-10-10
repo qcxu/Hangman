@@ -1,2 +1,4 @@
 Hangman
+
+Author: NNNN
 =======
